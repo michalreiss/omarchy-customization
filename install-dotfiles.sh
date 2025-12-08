@@ -28,7 +28,6 @@ if [ $? -eq 0 ]; then
   rm -rf ~/.config/nvim ~/.local/share/nvim/ ~/.cache/nvim/ ~/.config/ghostty/config
 
   cd "$REPO_NAME"
-  stow ghostty
   stow nvim
 else
   echo "Failed to clone the repository."
