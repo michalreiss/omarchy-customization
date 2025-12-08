@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if grep -q 'alias ga="git add -p"' "$HOME/.bashrc"; then
-		echo "Aliases already exist, skipping..."
-		exit 0
-fi
-
-cat << 'EOF' >> ~/.bashrc
-
+cat << 'EOF' > ~/.mikerc
 # Git shortcuts
 alias ga="git add -p"
 alias gc="git commit -m"
@@ -20,7 +14,12 @@ alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bol
 # Other
 alias vim="nvim"
 alias cat="bat"
-
 EOF
+
+if ! grep -q 'source ~/.mikerc' ~/.bashrc; then
+cat << 'EOF' >> ~/.bashrc
+source ~/.mikerc
+EOF
+fi
 
 echo "Aliases added to ~/.bashrc"
