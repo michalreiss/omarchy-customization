@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ORIGINAL_DIR=$(pwd)
-REPO_URL="https://github.com/michalreiss/dotfiles"
+REPO_URL="git@github.com:michalreiss/dotfiles"
 REPO_NAME="dotfiles"
 
 is_stow_installed() {
